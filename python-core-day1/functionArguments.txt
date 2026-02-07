@@ -1,0 +1,176 @@
+What interviewers want to see
+
+You understand defaults
+
+You know defaults are evaluated once
+
+You don’t misuse mutable defaults
+
+❌ WRONG (classic beginner mistake)
+def add_item(item, lst=[]):
+    lst.append(item)
+    return lst
+
+This breaks across calls.
+
+✅ CORRECT way (interview-safe)
+def add_item(item, lst=None):
+    if lst is None:
+        lst = []
+    lst.append(item)
+    return lst
+Why this matters
+
+Prevents shared state bugs
+
+Shows you understand Python internals
+
+Simple default argument example (safe)
+def greet(name, greeting="Hello"):
+    return f"{greeting}, {name}"
+
+Use defaults for:
+
+Optional behavior
+
+Configuration
+
+Sensible fallbacks
+
+2️⃣ Function that RETURNS MULTIPLE VALUES
+
+Python doesn’t return “multiple values”.
+It returns one tuple — and that distinction matters.
+
+✅ Correct way
+def get_stats(nums):
+    total = sum(nums)
+    avg = total / len(nums)
+    max_val = max(nums)
+    return total, avg, max_val
+Usage
+total, avg, max_val = get_stats([1, 2, 3, 4])
+Interview explanation (say this):
+
+“Python packs multiple return values into a tuple and supports unpacking.”
+
+❌ Bad style (don’t do this)
+return [total, avg, max_val]
+
+Why?
+
+Order-dependent
+
+No semantic meaning
+
+Error-prone
+
+🔥 Even better (self-documenting)
+from collections import namedtuple
+
+
+Stats = namedtuple("Stats", ["total", "avg", "max"])
+
+
+def get_stats(nums):
+    return Stats(
+        total=sum(nums),
+        avg=sum(nums)/len(nums),
+        max=max(nums)
+    )
+
+That’s senior-level clarity.
+
+3️⃣ Refactor a LONG SCRIPT into 3 CLEAN FUNCTIONS
+
+This is huge. Interviewers LOVE this.
+
+❌ BEFORE (Typical messy script)
+data = [10, 20, 30, 40]
+
+
+total = 0
+for x in data:
+    total += x
+
+
+avg = total / len(data)
+
+
+if avg > 25:
+    print("High")
+else:
+    print("Low")
+
+This is script thinking, not engineering.
+
+✅ AFTER (Clean, professional)
+def calculate_total(data):
+    return sum(data)
+
+
+def calculate_average(total, count):
+    return total / count
+
+
+def classify_average(avg, threshold=25):
+    return "High" if avg > threshold else "Low"
+Main logic
+data = [10, 20, 30, 40]
+
+
+total = calculate_total(data)
+avg = calculate_average(total, len(data))
+result = classify_average(avg)
+
+
+print(result)
+Why this is interview GOLD
+
+Each function:
+
+Does one thing
+
+Is testable
+
+Is reusable
+
+Has clear inputs & outputs
+
+Say this:
+
+“I refactor scripts into pure functions to improve readability, testing, and reuse.”
+
+That sentence alone upgrades you.
+
+🧠 Rules to Tattoo in Your Brain
+
+Defaults → never mutable
+
+One function → one responsibility
+
+Return values > printing
+
+Functions should be testable in isolation
+
+Scripts glue functions together
+
+Final Ruthless Verdict
+
+If you can write + explain all three:
+
+✅ You pass Python core
+
+✅ You’re ready for DS interviews
+
+❌ Skip this → you fail silently
+
+Next (don’t skip):
+
+Pure vs impure functions
+
+Side effects
+
+Writing testable code
+
+Docstrings that actually help
