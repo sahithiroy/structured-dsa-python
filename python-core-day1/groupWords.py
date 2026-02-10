@@ -52,4 +52,8 @@ I iterate once, compute the word length, and use it as a dictionary key mapping 
  Time and space are linear.'''
 
 
-'''what's the difference between dict vs defaultdict'''
+'''what's the difference between dict vs defaultdict
+A regular dict raises a KeyError if you try to access a key that doesn't exist.
+A defaultdict, on the other hand, provides a default value for a key that doesn't exist. 
+When you access a key that isn't present in the defaultdict, it automatically creates an entry for that key with a default value (like an empty list, 0, etc.)
+ based on the type specified when creating the defaultdict.'''

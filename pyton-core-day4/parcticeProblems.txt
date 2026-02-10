@@ -1,0 +1,183 @@
+1️⃣ Remove Duplicate Records
+Scenario
+
+You have sensor logs where the same reading was inserted multiple times.
+
+Table
+sensor_logs
+-----------
+id
+device_id
+reading
+timestamp
+Practice
+
+👉 Find duplicate records based on (device_id, timestamp) and keep only the latest one.
+
+Hint:
+Use a CTE with ROW_NUMBER().
+
+2️⃣ Find Top N per Group (Very Common in Interviews)
+Scenario
+
+Each inverter produces energy every day. You want the top 2 days with highest energy for each inverter.
+
+Table
+energy_data
+-----------
+inverter_id
+date
+energy_kwh
+Practice
+
+👉 For each inverter, return the top 2 days with highest energy_kwh.
+
+3️⃣ Running Total (Cumulative Sum)
+Scenario
+
+You’re analyzing daily energy production and want to see how energy accumulates over time.
+
+Table
+daily_energy
+------------
+date
+energy_kwh
+Practice
+
+👉 Calculate running total of energy ordered by date.
+
+4️⃣ Compare Today vs Yesterday
+Scenario
+
+You want to detect sudden drops in solar production.
+
+Table
+solar_output
+------------
+date
+energy_kwh
+Practice
+
+👉 For each day, show:
+
+today’s energy
+
+yesterday’s energy
+
+difference (today - yesterday)
+
+5️⃣ Recursive CTE – Date Series (🔥 Important)
+Scenario
+
+Your inverter data has missing dates. You want a continuous date series.
+
+Practice
+
+👉 Generate dates from
+2024-01-01 → 2024-01-10 using a recursive CTE.
+
+6️⃣ Find Gaps in Time-Series Data
+Scenario
+
+Your IoT device sends data every 15 minutes. Some intervals are missing.
+
+Table
+iot_data
+--------
+timestamp
+device_id
+Practice
+
+👉 Identify missing 15-minute intervals for each device.
+
+7️⃣ Multi-Step Analysis (CTE chaining)
+Scenario
+
+You want:
+
+Daily energy per inverter
+
+Monthly average from daily data
+
+Table
+raw_energy
+----------
+inverter_id
+timestamp
+energy
+Practice
+
+👉 Use multiple CTEs:
+
+CTE 1 → daily aggregation
+
+CTE 2 → monthly average
+
+8️⃣ Filter Using Aggregated Results
+Scenario
+
+You want inverters whose average daily energy > 50 kWh.
+
+Practice
+
+👉 Use a CTE to calculate averages and filter from it.
+
+9️⃣ Ranking & Categorization
+Scenario
+
+Classify inverters based on performance.
+
+Practice
+
+👉 Rank inverters by total energy and label them as:
+
+High → top 20%
+
+Medium → middle 60%
+
+Low → bottom 20%
+
+10️⃣ Interview-Style Challenge 💡
+Scenario
+
+Each battery has multiple charge cycles per day.
+
+Table
+battery_cycles
+--------------
+battery_id
+cycle_start
+cycle_end
+energy
+Practice
+
+👉 For each battery:
+
+count total cycles
+
+calculate total energy
+
+rank batteries by energy
+
+Use only CTEs, no subqueries.
+
+How to Practice Effectively
+
+1️⃣ Try writing the query yourself
+2️⃣ If stuck, ask me:
+
+“Give hint for scenario 3”
+3️⃣ Then ask:
+“Show optimized solution for scenario 3”
+
+If you want, I can:
+
+✅ give solutions
+
+✅ create MySQL-specific / PostgreSQL-specific versions
+
+✅ give interview questions with expected output
+
+✅ design CTE problems using your solar + inverter datasets
+
+Just tell me how deep you want to go 🚀

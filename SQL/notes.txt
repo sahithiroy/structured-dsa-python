@@ -1,0 +1,17 @@
+Introdcution to SQL:
+SQL stands for Structured Query Language. It is a programming language used to manage and manipulate relational databases
+SQL allows you to perform various operations on the data stored in a database, such as retrieving, inserting, updating, and deleting data. It is widely used in various applications and industries for managing and analyzing data.
+SQL is based on a set of commands and statements that are used to interact with the database. Some of the common SQL commands include:
+1. SELECT: Used to retrieve data from a database.   
+2. INSERT: Used to insert new data into a database.
+3. UPDATE: Used to modify existing data in a database.
+4. DELETE: Used to delete data from a database.
+5. CREATE: Used to create new tables or databases.
+6. DROP: Used to delete tables or databases.
+7. ALTER: Used to modify the structure of a database, such as adding or deleting columns
+8. JOIN: Used to combine data from multiple tables based on a related column.
+9. WHERE: Used to filter data based on specific conditions.
+10. GROUP BY: Used to group data based on specific columns.
+11. ORDER BY: Used to sort data in ascending or descending order.
+12. HAVING: Used to filter grouped data based on specific conditions.   
+SQL is a powerful language that allows you to efficiently manage and manipulate data in a relational database. It is essential for anyone working with databases or data analysis to have a good understanding of SQL.

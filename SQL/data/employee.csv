@@ -1,0 +1,11 @@
+emp_id,name,dept_id,salary
+1,Ramesh,20,60000
+2,Sita,30,75000
+3,John,20,50000
+4,Asha,10,45000
+5,Kiran,30,80000
+6,Meena,40,70000
+7,Ravi,,40000
+8,Anjali,20,65000
+9,Arjun,50,48000
+10,Neha,10,52000

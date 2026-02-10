@@ -1,0 +1,175 @@
+🧪 DAY 4 — SQL TEST
+
+Window Functions + CTEs
+
+⏱ Total time: 60 minutes
+⛔ Rules:
+
+No Google
+
+No trial-and-error
+
+Write clean, final queries
+
+Assume tables exist exactly as given
+
+🧠 SECTION 1 — CTEs (20 mins)
+Q1. Daily Aggregation (CTE basics)
+
+Table:
+
+orders
+-------
+order_id
+order_date
+amount
+
+👉 Write a query to:
+
+Calculate total sales per day
+
+Return only days where total sales > 10,000
+
+Must use a CTE.
+
+Q2. CTE vs Subquery Logic
+
+Table:
+
+employees
+---------
+emp_id
+name
+dept_id
+salary
+
+👉 Write a query to:
+
+Find employees whose salary is greater than their department’s average salary
+
+Constraints:
+
+Use a CTE
+
+No subqueries in WHERE clause
+
+Q3. Chained CTEs
+
+Table:
+
+transactions
+------------
+user_id
+txn_date
+amount
+
+👉 Write a query to:
+
+Calculate daily total per user
+
+From that, calculate monthly average spending per user
+
+Use at least 2 CTEs.
+
+🪟 SECTION 2 — Window Functions (25 mins)
+Q4. Top N per Group
+
+Table:
+
+employee_salary
+---------------
+emp_id
+dept_id
+salary
+
+👉 Find the top 2 highest paid employees per department.
+
+Must use a window function.
+
+Q5. Remove Duplicates
+
+Table:
+
+logs
+----
+id
+user_id
+login_time
+
+👉 Remove duplicate records based on (user_id, login_time)
+Keep only the latest record.
+
+(Assume higher id = latest)
+
+Q6. RANK vs DENSE_RANK (Classic)
+
+Table:
+
+employees
+---------
+emp_id
+salary
+
+👉 Find the 2nd highest salary
+(Handle duplicate salaries correctly)
+
+⏳ SECTION 3 — Time-Series Analysis (15 mins)
+Q7. Running Total
+
+Table:
+
+daily_sales
+-----------
+date
+sales
+
+👉 Calculate running total of sales ordered by date.
+
+Q8. Day-over-Day Growth 🔥
+
+Table:
+
+solar_energy
+------------
+date
+energy_kwh
+
+👉 For each date, show:
+
+today’s energy
+
+yesterday’s energy
+
+difference (today − yesterday)
+
+🎯 BONUS (If time permits)
+Q9. Ranking with Categories
+
+Table:
+
+inverter_energy
+---------------
+inverter_id
+total_energy
+
+👉 Rank inverters by total_energy and classify:
+
+Top 20% → High
+
+Middle 60% → Medium
+
+Bottom 20% → Low
+
+✅ Evaluation Criteria (Interview Lens)
+
+You PASS Day 4 if:
+
+No syntax errors
+
+Correct use of PARTITION BY
+
+No unnecessary GROUP BY
+
+Clean logic flow
+
+Uses CTEs where required

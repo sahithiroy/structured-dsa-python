@@ -15,3 +15,8 @@ def maxKey(d):
 print(maxKey({1: 2, 3: 4, 5: 6}))
 '''Time complexity:O(n)
 Space Complexity:O(1)'''
+
+'''what's the meaning of float('-inf')?
+float('-inf') represents negative infinity in Python. It's a special floating-point value that is smaller than any other number. 
+In the context of finding the maximum key, we initialize max_value to float('-inf') so that any value in the dictionary will be greater than this initial value, 
+ensuring that the first comparison will update max_value and max_key correctly.'''

@@ -1,0 +1,12 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "sahithi",
+            "group": "sahithi",
+            "database": "${workspaceFolder:structured-dsa-python}/SQL/data/orders.csv"
+        }
+    ],
+    "sqltools.useNodeRuntime": true
+}

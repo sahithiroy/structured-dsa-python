@@ -74,6 +74,10 @@ child_object.child_method()   # Output: This is a method in the Child class.
 # what hapens if both parent class have same method name and we are calling that method using child class object? 
 # which method will be called? 
 # how to call the method of specific parent class in that case?
+# If both parent classes have the same method name and we call that method using the child class object, Python will follow the method resolution order (MRO) to determine which method to call.
+# The MRO is determined by the order in which the parent classes are listed in the child class definition. In this case, the method from the first parent class (Father) will be called.
+# To call the method of a specific parent class, we can use the class name to specify which method we want to call. 
+# For example, to call the common method from the Father class, we can use Father.common_method(child_object), and to call the common method from the Mother class, we can use Mother.common_method(child_object).
 
 class Father:
     def common_method(self):
