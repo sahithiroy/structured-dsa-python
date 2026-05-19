@@ -1,0 +1,34 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.12
+    commands:
+      - echo "Installing dependencies..."
+      - pip install tox
+
+  pre_build:
+    commands:
+      - echo "Running pre-build steps..."
+      - tox -e style-check  # Check code style using Black
+
+  build:
+    commands:
+      - echo "Running tests..."
+      - tox -e build  # Run unit tests
+
+  post_build:
+    commands:
+      - echo "Packaging Lambda function..."
+      - tox -e package  # Create the Lambda package
+      - ls lambda
+      - BASE_REF_PATTERN="refs/heads/"
+      - SOURCE_VERSION=${CODEBUILD_WEBHOOK_BASE_REF:-$CODEBUILD_SOURCE_VERSION}
+      - echo $SOURCE_VERSION
+      - SERVER_ENV=$(echo "$SOURCE_VERSION" | sed 's|refs/heads/\(.*\)|\1|')
+
+artifacts:
+  name: ${SERVER_ENV}
+  files:
+    - "lambda/*.zip"

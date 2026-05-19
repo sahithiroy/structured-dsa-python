@@ -1,0 +1,15 @@
+fastapi==0.112.0
+jwt==1.3.1
+pydantic==2.8.2
+passlib==1.7.4
+pymongo==4.8.0
+python-jose==3.3.0
+boto3==1.34.156
+requests==2.32.3
+python-dotenv==1.0.1
+motor==3.5.1
+uvicorn==0.30.5
+cognitojwt==1.0.0
+aiohttp==3.11.11
+async-lru==2.0.4
+PyYAML==6.0.2
