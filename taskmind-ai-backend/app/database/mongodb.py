@@ -1,4 +1,4 @@
-from pymongo import MongoClient
+from motor.motor_asyncio import AsyncIOMotorClient
 from dotenv import load_dotenv
 import os
 
@@ -10,63 +10,40 @@ URL = os.getenv("URL")
 class MongoDB:
 
     def __init__(self):
-
-        self.client = MongoClient(URL)
-
+        self.client = AsyncIOMotorClient(URL)
         self.db = None
-
         self.collection = None
 
-    def connectMongoDB(self)-> None:
+    async def connectMongoDB(self):
 
         try:
-
-            self.client.admin.command('ping')
-
+            await self.client.admin.command('ping')
             print("Connected to MongoDB successfully!")
 
         except Exception as e:
-
             print("Error connecting to MongoDB:", e)
 
-    def create_database(self, db_name)->None:
-
-        print(self.client.list_database_names())
+    async def create_database(self, db_name):
 
         self.db = self.client[db_name]
 
-        if db_name not in self.client.list_database_names():
+        print(f"Using database: {db_name}")
 
-            print("Database created successfully")
-
-        else:
-
-            print("Database already exists")
-
-    def create_collection(self, collection_name)-> None:
-
-        print(self.db.list_collection_names())
+    async def create_collection(self, collection_name):
 
         self.collection = self.db[collection_name]
 
-        if collection_name not in self.db.list_collection_names():
+        print(f"Using collection: {collection_name}")
 
-            print("Collection created successfully")
+    async def insert_one(self, document):
 
-        else:
-
-            print("Collection already exists")
-
-    def insert_one(self, document)-> dict:
+        print("Collection:", self.collection)
 
         if self.collection is not None:
 
-            result = self.collection.insert_one(document)
-
-            print("Inserted ID:", result.inserted_id)
+            result = await self.collection.insert_one(document)
 
             return result
 
         else:
-
             print("Collection not found")

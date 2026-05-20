@@ -86,3 +86,4 @@ async def get_current_active_admin(current_user: Annotated[User, Depends(get_cur
         raise PyJWTException("Inactive user")
     return current_user
 
+
