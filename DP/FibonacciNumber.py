@@ -49,8 +49,19 @@ class Solution:
         
 #Time Complexity :O(N)
 #Space Complexity:O(N)
+class Solution:
+    def fib(self, n: int) -> int:
+        res={}
+        if n<=1:
+            return n
+        if n in res:
+            return res[n]
+        res[n]=self.fib(n-1)+self.fib(n-2)
+        return res[n]
+        
+        
 
-#using DP
+#using Tabulation
 class Solution:
     def fib(self, n: int) -> int:
         if n==0 or n==1:
