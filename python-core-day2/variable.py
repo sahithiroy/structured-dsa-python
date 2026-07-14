@@ -1,7 +1,9 @@
 '''
 Docstring for python-core-day2.variable
 Instance variable vs static variable
-Instance variables are variables that are defined within a class and are unique to each instance of the class. They are typically initialized in the __init__ method of the class and can be accessed and modified using the self keyword. Each instance of the class will have its own copy of the instance variable, allowing for different values to be stored for each object.
+Instance variables are variables that are defined within a class and are unique to each instance of the class. 
+They are typically initialized in the __init__ method of the class and can be accessed and modified using the self keyword. 
+Each instance of the class will have its own copy of the instance variable, allowing for different values to be stored for each object.
 Static variables, on the other hand, are variables that are shared among all instances of a class
 How to access a static variable in Python?
 In Python, you can access a static variable (also known as a class variable) using the class name or through an instance of the class. 
@@ -15,17 +17,12 @@ Here are two ways to access a static variable:
    # Accessing the static variable using the class name
    print(MyClass.static_variable)  # Output: This is a static variable
    ```
+
 2. Using an instance of the class:
 you can also access a static variable through an instance of the class. 
 However, it is important to note that when you access a static variable through an instance, it will still refer to the same static variable shared by all instances of the class. 
 For example:
-```python
-class MyClass:  
-    static_variable = "This is a static variable"   
-# Creating an instance of the class
-my_instance = MyClass()
-# Accessing the static variable through an instance
-print(my_instance.static_variable)  # Output: This is a static variable
+
 '''
 
 #static variable example

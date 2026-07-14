@@ -1,0 +1,28 @@
+Overall Roadmap FastAPI 
+FastAPI Architecture
+Request lifecycle
+Pydantic
+Dependency Injection
+Middleware
+CORS
+Async endpoints
+Error handling
+Validation
+Background Tasks
+Response Models
+
+Webhooks & Event-Driven Architecture
+Asynchronous Programming (async/await)
+Cloud API Integration & OAuth Workflows: Secure credential handling, token refresh loops, and enterprise authentication.
+Containerization & CI/CD Pipelines: Multi-stage Docker builds, image size optimization, and deployment pipelines.
+Concurrency and Long-Running Tasks:FastAPI BackgroundTasks vs. Celery with Redis/RabbitMQ.
+API Security & Rate Limiting:JWT Authentication, OAuth2 scopes, and Rate Limiting (Token Bucket Algorithm).
+Relational Database Optimization (MySQL): Indexing strategies, connection pooling, and avoiding the $N+1$ query problem in ORMs (like SQLAlchemy or Tortoise ORM).
+
+Interview Questions
+
+Why FastAPI instead of Flask?
+Why async?
+How is validation done?
+What is Pydantic?
+Explain your summarize endpoint.

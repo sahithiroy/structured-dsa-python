@@ -7,7 +7,8 @@ In Python, we can achieve encapsulation by using access modifiers to control the
 2. Protected: Attributes and methods that are intended to be accessed only within the class and its subclasses. They are defined with a single leading underscore (e.g., _attr2, _method2).
 3. Private: Attributes and methods that are intended to be accessed only within the class itself. They are defined with a double leading underscore (e.g., __attr3, __method3).
 By using these access modifiers, we can control the visibility of our class attributes and methods, which can help to prevent unintended access and modification of the internal state of our objects, thus promoting better encapsulation and data integrity in our programs.  
-In Python, we can also use property decorators to create getter and setter methods for class attributes, which allows us to control access to the attributes while still providing a way to read and modify their values. This is another way to achieve encapsulation in Python.   
+In Python, we can also use property decorators to create getter and setter methods for class attributes, which allows us to control access to the attributes while still providing a way to read and modify their values. 
+This is another way to achieve encapsulation in Python.   
 
 '''
 # Example of encapsulation in Python
@@ -66,3 +67,22 @@ public_object = PublicClass(50)
 print(public_object.public_attr)  # Output: 50
 
 
+#Example
+class Sahithi:
+    def __init__(self,name:str,age :int,salary:float):
+        self.name=name
+        self._age=age
+        self.__salary=salary
+    def getDetails(self)->list:
+        print(self.name)
+        print(self._age)
+        
+        return [self.name,self._age,self.__salary]
+    def modifySalary(self,value):
+        self.__salary=value
+        return self.__salary
+obj1=Sahithi("Sahithi",23,123456)
+print(obj1.name)
+print(obj1._age)
+print(obj1.getDetails())
+print(obj1.modifySalary(34566))

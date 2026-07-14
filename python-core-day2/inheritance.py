@@ -53,6 +53,35 @@ dog_object = Dog()
 dog_object.eat()  # Output: This animal is eating.  
 # Accessing the method from the child class
 dog_object.bark() # Output: The dog is barking.
+#Single inheritance
+class Krishna:
+    def __init__(self,surName):
+        self.name=surName
+    def getName(self):
+        print("krishna class")
+        print(self.name)
+        return self.name
+
+class Sahithi(Krishna):
+    def __init__(self,name:str,age :int,salary:float):
+        self.name=name
+        self._age=age
+        self.__salary=salary
+    def getDetails(self)->list:
+        print(self.name)
+        print(self._age)
+        
+        return [self.name,self._age,self.__salary]
+    def modifySalary(self,value):
+        self.__salary=value
+        return self.__salary
+        
+obj1=Sahithi("Sugavasi",23,123456)
+print(obj1.getName())
+print(obj1.name)
+print(obj1._age)
+print(obj1.getDetails())
+print(obj1.modifySalary(34566))
 
 # Example of multiple inheritance
 class Father:
@@ -99,6 +128,44 @@ Father.common_method(child_object)  # Output: This is the common method in the F
 # Calling the common method from the Mother class   
 Mother.common_method(child_object)  # Output: This is the common method in the Mother class.
 
+#Multi level inheritance
+
+class Krishna():
+    def __init__(self,surName):
+        self.name=surName
+    def getName(self):
+        print("krishna class")
+        print(self.name)
+        return self.name
+class Bharathi:
+    def __init__(self,surName):
+        self.name=surName
+    def getSurName(self):
+        print("Bharathi Class")
+        print(self.name)
+        return self.name
+        
+class Sahithi(Krishna,Bharathi):
+    def __init__(self,name:str,age :int,salary:float):
+        self.name=name
+        self._age=age
+        self.__salary=salary
+    def getDetails(self)->list:
+        print(self.name)
+        print(self._age)
+        
+        return [self.name,self._age,self.__salary]
+    def modifySalary(self,value):
+        self.__salary=value
+        return self.__salary
+        
+obj1=Sahithi("Sugavasi",23,123456)
+print(obj1.getSurName())
+print(obj1.getName())
+print(obj1.name)
+print(obj1._age)
+print(obj1.getDetails())
+print(obj1.modifySalary(34566))
 
 '''In this example, we demonstrated single inheritance with the Animal and Dog classes, and multiple inheritance with the Father, Mother, and Child classes.
    We also showed how to handle method name conflicts in multiple inheritance by specifying the parent class when calling the method.
@@ -120,6 +187,43 @@ child_object = Child()
 child_object.grandparent_method()  # Output: This is a method in the Grandparent class.   
 child_object.parent_method()        # Output: This is a method in the Parent class. 
 child_object.child_method()         # Output: This is a method in the Child class.
+#MultiLevele Inheritance
+class Narsimha:
+    def __init__(self,surName):
+        self.name=surName
+    def getSurName(self):
+        print("Narsimha class")
+        print(self.name)
+        return self.name
+class Krishna(Narsimha):
+    def __init__(self,surName):
+        self.name=surName
+    def getName(self):
+        print("krishna class")
+        print(self.name)
+        return self.name
+
+class Sahithi(Krishna):
+    def __init__(self,name:str,age :int,salary:float):
+        self.name=name
+        self._age=age
+        self.__salary=salary
+    def getDetails(self)->list:
+        print(self.name)
+        print(self._age)
+        
+        return [self.name,self._age,self.__salary]
+    def modifySalary(self,value):
+        self.__salary=value
+        return self.__salary
+        
+obj1=Sahithi("Sugavasi",23,123456)
+print(obj1.getSurName())
+print(obj1.getName())
+print(obj1.name)
+print(obj1._age)
+print(obj1.getDetails())
+print(obj1.modifySalary(34566))
 '''In this example, we demonstrated multilevel inheritance with the Grandparent, Parent, and Child classes.
    The Child class inherits from the Parent class, which in turn inherits from the Grandparent class.
    We created an object of the Child class and accessed methods from all levels of the hierarchy.
@@ -145,6 +249,41 @@ child2_object.parent_method()  # Output: This is a method in the Parent class.
 # Accessing methods from the child classes
 child1_object.child1_method()  # Output: This is a method in the Child1 class.
 child2_object.child2_method()  # Output: This is a method in the Child2 class.
+
+
+
+class Krishna():
+    def __init__(self,surName):
+        self.name=surName
+    def getName(self):
+        print("krishna class")
+        print(self.name)
+        return self.name
+class Kishore(Krishna):
+    def __init__(self,surName):
+        self.name=surName
+    def getSurName(self):
+        print("kishore class")
+
+        
+class Sahithi(Krishna):
+    def __init__(self,name:str,age :int,salary:float):
+        self.name=name
+        self._age=age
+        self.__salary=salary
+    def getDetails(self)->list:
+        print(self.name)
+        print(self._age)
+        
+        return [self.name,self._age,self.__salary]
+    def modifySalary(self,value):
+        self.__salary=value
+        return self.__salary
+        
+obj1=Sahithi("Sugavasi",23,123456)
+print(obj1.getName())
+obj2=Kishore("kishore")
+print(obj2.getName())
 '''In this example, we demonstrated hierarchical inheritance with the Parent, Child1, and Child2 classes.
    Both Child1 and Child2 inherit from the Parent class.
    We created objects of both child classes and accessed the parent class method as well as their own methods.

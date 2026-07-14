@@ -83,11 +83,40 @@ child_object.display()
 # This is the display method in the Parent class.   
 # This is the display method in the Child class.
 
+#Imagine a parent class defines a common behavior, but different child classes need to perform that behavior differently.
+class Payment:
+    def pay(self, amount):
+        print(f"Paying ₹{amount}")
+
+class CreditCard(Payment):
+    def pay(self, amount):
+        print(f"Paid ₹{amount} using Credit Card")
+
+class UPI(Payment):
+    def pay(self, amount):
+        print(f"Paid ₹{amount} using UPI")
+
+class Cash(Payment):
+    def pay(self, amount):
+        print(f"Paid ₹{amount} using Cash")
+
+class Employee:
+    def calculate_salary(self):
+        pass
+
+class FullTime(Employee):
+    def calculate_salary(self):
+        return 50000
+
+class PartTime(Employee):
+    def calculate_salary(self):
+        return 20000
 
 
 
-
-
+'''Method overriding lets different machine learning algorithms expose the same API (fit(), predict(), score(), etc.) 
+while implementing different training and prediction logic internally. This consistency is one of the reasons libraries like scikit-learn 
+are easy to learn and use: you can switch algorithms with minimal changes to your code.'''
 
 
 
@@ -128,7 +157,8 @@ class A:
 obj1 = A()
 print(obj1.add(2, 3))      # Output: 5  
 print(obj1.add(2, 3, 4))   # Output: 9
-
+'''Python does not support true method overloading like Java or C++. If multiple methods have the same name, the last one defined overrides the previous ones. Similar behavior is achieved using default arguments, 
+*args, **kwargs, or libraries like functools.singledispatch for specific use cases.'''
 
 
 
